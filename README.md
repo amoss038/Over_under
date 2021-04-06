@@ -40,6 +40,35 @@ The Data is scraped fro NBA.com utilizing the last 7 years of games logs for eve
 I compared 3,5,7, and 10 game rolling averages for the features and predictors that the model will be trained on. And, it turns out that a 7 games rolling average has the best predictive power in terms of minimizing the error metric MAE.
 
 
+----------------------------------------------------------------------------------------------------------------------------------
+
+## Results 
+
+### Initial Results 
+
+Random Forest Using 7 Game rolling Average.
+
+- Winning Percentage:  52.0% 
+- MAE: 13.0
+- Overall return: $-3,095
+
+Below is a visual of how my predictions compare to what the odds threshold is or betting line and the actual total of the game Over a snapshot of 20 games that my model analyzed. As you can see my model is able to capture much of the trends in terms of the actual game total points and the betting threshold or betline.
+
+![Alt text](images/predictions.jpg?raw=true "NBA")
+
+
+** Since the model is able to capture the trends relatively accurately maybe there is a way to increase our chances of winning by introducing Kappa?
+
+## Kappa 
+
+![Alt text](images/kappa.jpg?raw=true "NBA")
+
+
+** Note That this is only using the testing set that is apart of the training data. The model currently seems to be a little overfit because when I tried validating the model with the holdout data Kappa 3 caps out at 51.0% accuracy with a MAE of 16. Unfortunaly, this result produces a negative return and it is recommended not to put this model into production until I increase the testing accuracy. However, these initial results are promising because it supports the validity of the Kappa metric provided we are able to keep the MAE to around 13. 
+
+*** The next steps would be to introduce more data, new models, and feature engineering to lower the MAE of the holdout to approximately 13, which signifies a profitable model utilizing the Kappa metric.
+
+
 
 
 
